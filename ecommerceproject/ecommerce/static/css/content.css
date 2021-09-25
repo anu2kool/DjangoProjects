@@ -1,0 +1,20 @@
+#webcoderskull{
+    position: absolute;
+    left: 0;
+    top: 15%;
+    padding: 0 20px;
+    width: 100%;
+    text-align: center;
+}
+
+canvas{
+    height:100vh;
+    background-color:#16a085;
+}
+#webcoderskull p{
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}

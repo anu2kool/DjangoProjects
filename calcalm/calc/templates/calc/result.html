@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	 <!-- Prism CSS -->
+    <link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+	<style>
+body {
+  background-image: url({% static 'calc/img1.jpg' %});
+    background-attachment: fixed;
+  background-size: cover;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #555545;;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.current{
+  background-color: #09D8FF;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+}
+
+
+</style>
+
+<div>
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="news.asp" class="current">Result</a></li>
+  <li><a href="contact.asp">Contact</a></li>
+  <li><a href="about.asp">About</a></li>
+</ul>
+</div>
+
+
+<div class="row">
+  <div class="column">
+    <h3>Hello to the world of Python!</h3>
+  </div>
+  <div class="column">
+    <img src="{% static 'calc/img6.png' %}" width="100" height="100" style="padding-top:8px padding-right:8px;" >
+  </div>
+</div>
+{% if flag %}
+   <script>var toastHTML = '<span>Hurray! Correct Answer</span><button class="btn-flat toast-action">Undo</button>';
+    M.toast({html: toastHTML});</script>
+  {% else %}
+    <script>var toastHTML = '<span>Oops! Wrong Answerr</span><button class="btn-flat toast-action">Undo</button>';
+  M.toast({html: toastHTML});</script>
+{% endif %}
+<div>
+    <h3>Correct answer is: {{result}}</h3>
+    {% if flag %}
+    <img src="{% static 'calc/img4.gif' %}">
+    <marquee bgcolor="#d9d9ff" style="border:solid; font-size: 30px">Correct Answer</marquee>
+    {% else %}
+    <img src="{% static 'calc/img5.gif' %}">
+    <marquee bgcolor="#d9d9ff" style="border:solid; font-size: 30px">Wrong Answer</marquee>
+
+    {% endif %}
+  <h3>Your answer is: {{result1}}</31>
+</div>
+<br>
+<form action="http://127.0.0.1:8000/homepage/">
+  <h6>back</h6>
+  <input type="image" src="{% static 'calc/img3.jpg' %}" alt="back" width="82" height="48">
+</form>
+</body>
+</html>

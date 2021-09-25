@@ -1,0 +1,6 @@
+{% if messages %}
+    {% for message in messages %}
+        <script>var toastHTML = '<span>Hurray! {{message}}</span><button class="btn-flat toast-action">Undo</button>';</script>
+        <script>M.toast({html: toastHTML});</script>
+    {% endfor %}
+  {% endif %}

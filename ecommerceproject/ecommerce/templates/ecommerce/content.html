@@ -1,0 +1,11 @@
+{% extends 'ecommerce/main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/content.css' %}">
+<script src="{% static 'javascript/content.js' %}"></script>
+<div id="particles">
+  <div id="webcoderskull">
+    <p>{{lang.content}}</p>    
+  </div>
+</div>
+{% endblock %}
